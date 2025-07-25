@@ -47,12 +47,15 @@ fi
 echo "Redémarrage du service Chrony..."
 sudo systemctl restart chrony
 # Laisse un peu de temps à Chrony pour se connecter
-sleep 5
+sleep 20
 
 echo "Vérification du statut de Chrony :"
 sudo chronyc tracking
 echo "-------------------------------------"
 echo "Sources de synchronisation actuelles :"
 sudo chronyc sources
+echo "Clients connectés au serveur :"
+sudo chronyc clients
+
 
 echo "Configuration de Chrony terminée avec succès !"
